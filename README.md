@@ -1,2 +1,1 @@
-# Streamlit_dashboard
-Streamlit_Echarts Dashboard
+# Streamlit - Echarts Dashboard
