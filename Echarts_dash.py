@@ -1,5 +1,6 @@
 import streamlit as st
 import json
+import xlrd
 import pandas as pd
 import numpy as np
 from millify import millify
@@ -10,7 +11,7 @@ st.set_page_config(page_title="Dashboard", layout ="wide")
 
 @st.cache
 def load_csv():
-    df = pd.read_excel('Sample - Superstore.xls',engine='openpyxl')
+    df = pd.read_excel('Sample - Superstore.xls',engine='xlrd')
     df['Order Date']= pd.to_datetime(df['Order Date']).dt.strftime('%d-%b-%Y')
     df['year']= pd.to_datetime(df['Order Date']).dt.strftime('%Y')
     df['month']= pd.to_datetime(df['Order Date']).dt.strftime('%b')
